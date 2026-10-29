@@ -1,0 +1,294 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.header {
+    background: #142b4a;
+    color: white;
+    padding: 22px 8%;
+}
+
+.brand {
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    color: #69d5b0;
+}
+
+.header p {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 22px;
+}
+
+.intro {
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    color: #16836b;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.intro h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.2;
+    margin: 8px 0;
+    color: #142b4a;
+}
+
+.intro > p:last-child {
+    color: #64748b;
+    max-width: 600px;
+}
+
+.budget-card,
+.section,
+.results-section {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
+}
+
+.budget-card label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.budget-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.budget-controls input {
+    width: 100%;
+    min-width: 0;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+#findButton {
+    background: #167b66;
+    color: white;
+    padding: 13px 18px;
+    white-space: nowrap;
+}
+
+#findButton:hover {
+    background: #105f50;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.hint {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.error {
+    color: #b91c1c;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    color: #142b4a;
+    font-size: 22px;
+}
+
+.count,
+.status {
+    background: #e8f7f1;
+    color: #167b66;
+    border-radius: 20px;
+    padding: 5px 11px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #e9eef5;
+}
+
+th {
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+td:nth-child(2),
+td:nth-child(3) {
+    font-variant-numeric: tabular-nums;
+}
+
+.selected-items {
+    padding: 16px;
+    border-radius: 9px;
+    background: #f8fafc;
+    margin-bottom: 18px;
+    color: #334155;
+}
+
+.selected-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.selected-item:last-child {
+    border-bottom: none;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.summary-card {
+    background: #f1f7ff;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.summary-card p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.summary-card h3 {
+    color: #142b4a;
+    font-size: 23px;
+    margin-top: 5px;
+    overflow-wrap: anywhere;
+}
+
+.analysis {
+    background: #f8fafc;
+    padding: 17px;
+    border-radius: 9px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #475569;
+}
+
+.analysis h3 {
+    color: #142b4a;
+    margin-bottom: 6px;
+}
+
+.reset-button {
+    background: #e2e8f0;
+    color: #334155;
+    padding: 12px 18px;
+    margin-top: 18px;
+}
+
+.reset-button:hover {
+    background: #cbd5e1;
+}
+
+footer {
+    background: #142b4a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 18px;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 12px;
+    }
+
+    .budget-card,
+    .section,
+    .results-section {
+        padding: 16px;
+    }
+
+    .budget-controls {
+        flex-direction: column;
+    }
+
+    #findButton {
+        width: 100%;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

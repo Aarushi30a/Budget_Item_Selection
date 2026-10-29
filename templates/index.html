@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Budget & Item Selection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="header">
+        <div class="brand">BUDGET<span>WISE</span></div>
+        <p>Smart shopping powered by algorithms</p>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <p class="eyebrow">DAA MINI PROJECT</p>
+            <h1>Make Every Rupee Count.</h1>
+            <p>
+                Find the best combination of items for your budget
+                using Dynamic Programming.
+            </p>
+        </section>
+
+        <section class="budget-card">
+            <label for="budget">Your shopping budget (₹)</label>
+
+            <div class="budget-controls">
+                <input
+                    type="number"
+                    id="budget"
+                    min="0"
+                    max="100000"
+                    step="1"
+                    value="2000"
+                    placeholder="Enter your budget"
+                >
+
+                <button id="findButton" type="button">
+                    Find Best Selection
+                </button>
+            </div>
+
+            <p class="hint">Enter an amount from ₹0 to ₹1,00,000.</p>
+            <p id="errorMessage" class="error" role="alert"></p>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR OPTIONS</p>
+                    <h2>Available Items</h2>
+                </div>
+                <span class="count">7 products</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>Bag</td><td>₹500</td><td>60</td></tr>
+                        <tr><td>Shoes</td><td>₹1,200</td><td>100</td></tr>
+                        <tr><td>Watch</td><td>₹800</td><td>80</td></tr>
+                        <tr><td>Book</td><td>₹200</td><td>30</td></tr>
+                        <tr><td>Headphones</td><td>₹1,000</td><td>90</td></tr>
+                        <tr><td>Bottle</td><td>₹300</td><td>40</td></tr>
+                        <tr><td>Keyboard</td><td>₹700</td><td>70</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="hint">
+                Item value is a score assigned for this project.
+                The algorithm maximizes total value, not the number of items.
+            </p>
+        </section>
+
+        <section class="results-section" aria-live="polite">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR RESULTS</p>
+                    <h2>Selected Items</h2>
+                </div>
+                <span class="status">Optimal selection</span>
+            </div>
+
+            <div id="selectedItems" class="selected-items">
+                Enter a budget and click Find Best Selection.
+            </div>
+
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <p>Total Cost</p>
+                    <h3 id="totalCost">₹0</h3>
+                </div>
+
+                <div class="summary-card">
+                    <p>Money Left</p>
+                    <h3 id="remainingBudget">₹0</h3>
+                </div>
+
+                <div class="summary-card">
+                    <p>Total Value</p>
+                    <h3 id="totalValue">0</h3>
+                </div>
+            </div>
+
+            <div class="analysis">
+                <h3>Algorithm Analysis</h3>
+                <p>Algorithm: 0/1 Knapsack using Dynamic Programming</p>
+                <p>Time Complexity: O(n × B)</p>
+                <p>Space Complexity: O(n × B)</p>
+            </div>
+
+            <button id="resetButton" class="reset-button" type="button">
+                Reset Results
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        BudgetWise · Python · Flask · DAA
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
